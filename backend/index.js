@@ -40,6 +40,12 @@ app.get('/user',(req, res)=>{
         if(err){
             console.log(err, 'error');
         }
+        if(result.length>0){
+            res.send({
+                message: 'all user data',
+                data: result
+            })
+        }
     })
 
 })
