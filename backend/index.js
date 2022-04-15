@@ -22,9 +22,26 @@ const db = mysql.createConnection({
 
 db.connect(err=>{
     if(err){
-        console.log('error');
+        console.log(err,'error');
     }
     console.log('DB connected....');
+})
+
+// get all data
+
+app.get('/user',(req, res)=>{
+
+    // console.log('all users');
+
+    let qr = `SELECT * from user`;
+
+    db.query(qr, (err, result)=>{
+
+        if(err){
+            console.log(err, 'error');
+        }
+    })
+
 })
 
 
